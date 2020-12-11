@@ -1,23 +1,20 @@
-import { Action } from "./actions";
-
-
+import {Action} from './actions';
 const initialState = {
-    isWaiting: false,
-    weights: [],
-}
+     entries: [],
+};
 
-function reducer(state = initialState, action) {
+
+function reducer(state = initialState, action){
     switch (action.type) {
-        case Action.LoadWeights:
-            return {
+        case Action.LoadEntries:
+            return{
                 ...state,
-                weights: action.payload,
+                entries: action.payload,
             }
+    
         default:
             return state;
-    }
         
-    
 }
-
+}
 export default reducer;

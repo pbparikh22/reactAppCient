@@ -1,16 +1,13 @@
 export const Action = Object.freeze({
+    LoadEntries: 'LoadEntries',
+});
 
-    LoadWeights: 'LoadWeights',
-})
-
-export function loadWeights(weights) {
+export function loadEntries(entries){
     return{
-        type: Action.LoadWeights,
-        payload: weights,
+        type: Action.LoadEntries,
+        payload: entries,
     };
 }
-
-
 function checkForErrors(response) {
     if (!response.ok) {
         throw Error(`${response.status}: ${response.statusText}`);
@@ -20,18 +17,16 @@ function checkForErrors(response) {
 
 const host = "https://project2.basementjj.me:8442";
 
-export function loadDay(month, day) {
+export function loadDay(month, day){
     return dispatch => {
-        fetch(`${host}/weights/${month}/${day}`)
+        fetch(`${host}/track/${month}/${day}`)
         .then(checkForErrors)
         .then(response => response.json())
         .then(data => {
             if(data.ok) {
-                dispatch(loadWeights(data.weights));
+                dispatch(loadEntries(data.memories));
             }
         })
         .catch(e => console.error(e));
     };
-    
 }
-

@@ -13,6 +13,8 @@ export function WeightTracker(props) {
             <div className="memory-left">
                 <span className="year">{tracker.year}</span>
                 <span>{months[tracker.month - 1]} {tracker.day}</span>
+                <span>{tracker.goal} {tracker.curweight}</span>
+
             </div>
             <div className="memory-right">
                 {tracker.message}
