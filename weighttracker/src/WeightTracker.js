@@ -7,20 +7,15 @@ const months = ["January", "February", "March", "April",
 
 export function WeightTracker(props) {
     
-    const weightTracker = props.weightTracker;
+    const tracker = props.tracker;
     return (
-        <div className="weightTracker">
+        <div className="tracker">
             <div className="memory-left">
-                <span className="year">
-                    {weightTracker.year}
-                </span>
-                <span>
-                    {months[weightTracker.month - 1]}
-                    {weightTracker.day}
-                </span>
+                <span className="year">{tracker.year}</span>
+                <span>{months[tracker.month - 1]} {tracker.day}</span>
             </div>
             <div className="memory-right">
-                {weightTracker.message}
+                {tracker.message}
             </div>
         </div>
     )
