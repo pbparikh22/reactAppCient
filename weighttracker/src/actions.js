@@ -18,7 +18,7 @@ function checkForErrors(response) {
     return response;
 }
 
-const host = "http://project2.basementjj.me:9000/track/4/7";
+const host = "https://project2.basementjj.me:8442";
 
 export function loadDay(month, day) {
     return dispatch => {
