@@ -4,20 +4,29 @@ import {WeightTracker} from './WeightTracker';
 import {useSelector, useDispatch} from 'react-redux';
 import {loadDay} from './actions';
 
+
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
+
+
+
 function App() {
 
-  const weightCalendar = useSelector(state => state.weightCalendar);
+  const weightCalendar = useSelector(state => state.weights);
   const dispatch = useDispatch();
 
   useEffect( () => {
-    dispatch(loadDay(4, 7));
+    dispatch(loadDay(month, day));
   }, [dispatch]);
   
 
 
   return (
     <div className="weight-root">
-      {weightCalendar.map(weight => <WeightTracker key={weight.id} weight={weight} />)}
+      {weightCalendar.map(tracker => <WeightTracker key={tracker.id} tracker={tracker} />)}
+      
     </div>
   );
 }
