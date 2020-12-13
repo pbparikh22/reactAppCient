@@ -58,7 +58,7 @@ function checkForErrors(response) {
 
 const host = "https://project2.basementjj.me:8442";
 
-export function loadDay(month, day){
+export function loadDay(month, day) {
     return dispatch => {
         fetch(`${host}/track/${month}/${day}`)
         .then(checkForErrors)
@@ -72,8 +72,8 @@ export function loadDay(month, day){
     };
 }
 
-export function startAddingEntry(year, month, day, goal, curweight) {
-    const entry = { year, month, day, goal, curweight, message: ''};
+export function startAddingEntry(year, month, day) {
+    const entry = { year, month, day, message: ''};
     const options = {
         method: 'POST',
         headers: {

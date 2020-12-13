@@ -4,7 +4,7 @@ const initialState = {
 };
 
 
-function reducer(state = initialState, action){
+function reducer(state = initialState, action) {
     switch (action.type) {
         case Action.LoadEntries:
             return{

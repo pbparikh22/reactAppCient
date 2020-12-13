@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+.title {
+  background-color:  #bfbfbf;
+  height: 300px;
+  margin: auto; 
+  width: 1000px;
+  padding: 10px;
+
+}
+
+
 .tracker {
   margin: 10px 10px 0 10px;
   display: flex;

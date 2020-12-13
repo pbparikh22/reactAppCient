@@ -9,20 +9,19 @@ const date = new Date();
 const year = date.getFullYear();
 const month = date.getMonth() + 1;
 const day = date.getDate();
-const goal = 0;
-const curweight = 0;
 
 
-function App() {
+
+export function App() {
 
   const weightCalendar = useSelector(state => state.entries);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadDay(month, day));
+    dispatch(loadDay(4, 8));
   }, [dispatch]);
  
   const onAdd = () => {
-    dispatch(startAddingEntry(year, month, day, goal, curweight));
+    dispatch(startAddingEntry(year, month, day));
   }
 
   return (

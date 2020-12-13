@@ -7,6 +7,7 @@ import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
+    <div className="titleDiv">Weight Tracker</div>
     <Provider store={store}>
       <App />
     </Provider>
