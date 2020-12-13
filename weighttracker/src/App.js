@@ -17,7 +17,7 @@ export function App() {
   const weightCalendar = useSelector(state => state.entries);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadDay(4, 8));
+    dispatch(loadDay(month));
   }, [dispatch]);
  
   const onAdd = () => {
@@ -25,9 +25,13 @@ export function App() {
   }
 
   return (
+    
     <div className="weight-root">
-      <button onClick={onAdd}>New Entry</button>
+      
+      <button id="fixedButton" onClick={onAdd}>New Entry</button>
+  
       {weightCalendar.map(tracker => <WeightTracker key={tracker.id} tracker={tracker} />)}
+      
     </div>
   );
 }

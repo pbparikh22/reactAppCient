@@ -58,9 +58,9 @@ function checkForErrors(response) {
 
 const host = "https://project2.basementjj.me:8442";
 
-export function loadDay(month, day) {
+export function loadDay(month) {
     return dispatch => {
-        fetch(`${host}/track/${month}/${day}`)
+        fetch(`${host}/track/${month}`)
         .then(checkForErrors)
         .then(response => response.json())
         .then(data => {
