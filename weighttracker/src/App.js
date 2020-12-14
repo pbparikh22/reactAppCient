@@ -3,7 +3,7 @@ import './App.css';
 import {WeightTracker} from "./WeightTracker";
 import {useSelector, useDispatch} from 'react-redux';
 import {loadDay, startAddingEntry} from './actions';
-
+import {ProgressBar} from 'react-fetch-progressbar'
 
 const date = new Date();
 const year = date.getFullYear();
@@ -16,6 +16,7 @@ export function App() {
 
   const weightCalendar = useSelector(state => state.entries);
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(loadDay(month));
   }, [dispatch]);
@@ -27,10 +28,14 @@ export function App() {
   return (
     
     <div className="weight-root">
-      
+     
+    
+      <ProgressBar/>
       <button id="fixedButton" onClick={onAdd}>New Entry</button>
-  
+    
       {weightCalendar.map(tracker => <WeightTracker key={tracker.id} tracker={tracker} />)}
+      
+
       
     </div>
   );

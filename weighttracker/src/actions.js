@@ -1,3 +1,7 @@
+import {progressBarFetch, setOriginalFetch} from 'react-fetch-progressbar';
+setOriginalFetch(window.fetch);
+window.fetch = progressBarFetch;
+
 export const Action = Object.freeze({
     LoadEntries: 'LoadEntries',
     FinishAddingEntry: 'FinishAddingEntry',
@@ -6,7 +10,7 @@ export const Action = Object.freeze({
     FinishSavingEntry: 'FinishSavingEntry',
     FinishDeletingEntry: 'FinishDeletingEntry',
 
-});
+}); 
 
 export function loadEntries(entries){
     return{
